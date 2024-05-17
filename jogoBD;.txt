@@ -3,16 +3,33 @@ drop database jogo;
 create database jogo;
 use jogo;
  
-create table jogador(
+ create table cadastro(
+id int auto_increment primary key,
+email_institucional character(50) not null,
+RM char (11) not null
+);
+ 
+ 
+create table login (
 id int auto_increment primary key,
 email_Institucional character(50) not null,
-RM longtext not null
+RM longtext not null,
+cadastro_id int,
+foreign key(cadastro_id)
+references cadastro(id)
 );
 
-select *
-from jogador;
 
-insert into jogador (email_Institucional, RM) values ('arthur.melo@etec.sp.gov.br', MD5('12345678910'));
-insert into jogador (email_Institucional, RM) values ('antonio.caio@etec.sp.gov.br', MD5('98745632101'));
-insert into jogador (email_Institucional, RM) values ('igor.franzon@etec.sp.gov.br', MD5('12365470897'));
-insert into jogador (email_Institucional, RM) values ('flype.itiro@etec.sp.gov.br', MD5('03216549870'));
+
+
+
+
+
+
+select *
+from login;
+
+insert into cadstro (email_Institucional, RM) values ('arthur.melo@etec.sp.gov.br', MD5('12345678910'));
+insert into cadastro (email_Institucional, RM) values ('antonio.caio@etec.sp.gov.br', MD5('98745632101'));
+insert into cadastro (email_Institucional, RM) values ('igor.franzon@etec.sp.gov.br', MD5('12365470897'));
+insert into cadastro (email_Institucional, RM) values ('flype.itiro@etec.sp.gov.br', MD5('03216549870'));
