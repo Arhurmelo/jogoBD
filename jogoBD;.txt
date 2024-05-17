@@ -1,0 +1,18 @@
+drop database jogo;
+
+create database jogo;
+use jogo;
+ 
+create table jogador(
+id int auto_increment primary key,
+email_Institucional character(50) not null,
+RM longtext not null
+);
+
+select *
+from jogador;
+
+insert into jogador (email_Institucional, RM) values ('arthur.melo@etec.sp.gov.br', MD5('12345678910'));
+insert into jogador (email_Institucional, RM) values ('antonio.caio@etec.sp.gov.br', MD5('98745632101'));
+insert into jogador (email_Institucional, RM) values ('igor.franzon@etec.sp.gov.br', MD5('12365470897'));
+insert into jogador (email_Institucional, RM) values ('flype.itiro@etec.sp.gov.br', MD5('03216549870'));
